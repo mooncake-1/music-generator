@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './PlayPauseButton.css';
 
 interface PlayPauseButtonProps {
   handlePlay: () => void;
@@ -18,7 +19,7 @@ const PlayPauseButton: React.FC<PlayPauseButtonProps> = ({ handlePlay }) => {
         className="play-pause-button"
         onClick={handleClick}
       >
-        {isPlaying ? 'Pause' : 'Play'} {isPlaying ? '▌▌' : '►'}
+        {isPlaying ? '\u23F8' : '\u23F5'}
       </button>
     </div>
   );

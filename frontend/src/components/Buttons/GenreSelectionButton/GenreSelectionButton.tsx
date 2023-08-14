@@ -1,4 +1,5 @@
 import React from 'react';
+import './GenreSelectionButton.css';
 
 interface GenreSelectionProps {
   selectedGenre: number | null;
@@ -10,7 +11,7 @@ const GenreSelection: React.FC<GenreSelectionProps> = ({ selectedGenre, setSelec
 
   return (
     <div className="genre-selection-container">
-      <label>Select Genre:</label>
+      <label>Genre</label>
       <div className="genre-buttons">
         {genres.map((genre, index) => (
           <button

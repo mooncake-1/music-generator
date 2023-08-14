@@ -1,0 +1,47 @@
+/* Model Complexity Slider container */
+.model-complexity-container {
+  position: absolute;
+  right: 0;
+  bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 20px;
+}
+
+/*  Model Complexity Slider */
+.model-complexity-container input[type="range"] {
+  position: relative;
+  width: 200px;
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none; /* Important for Chrome */
+}
+
+/* Custom Track */
+.model-complexity-container input[type="range"]::-webkit-slider-runnable-track {
+  background:ghostwhite;
+  height: 12px;
+  border-radius: 3px;
+}
+
+/* Custom Thumb */
+.model-complexity-container input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: transparent; /* Make thumb transparent */
+  border: none; /* Remove border */
+  width: 0px;
+  height: 5px;
+}
+
+/* Filling based on the value */
+.model-complexity-container input[type="range"]::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: calc(var(--fillFactor, 0) * 1%);
+  background: linear-gradient(to right, #7b00ff, #ff00a2); 
+  transform-origin: left center;
+}

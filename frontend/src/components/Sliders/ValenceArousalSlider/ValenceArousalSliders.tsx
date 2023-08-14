@@ -1,4 +1,5 @@
 import React from 'react';
+import './ValenceArousalSliders.css';
 
 interface ValenceArousalSlidersProps {
   valence: number;
@@ -19,7 +20,7 @@ const ValenceArousalSliders: React.FC<ValenceArousalSlidersProps> = ({ valence, 
           step="1"
           value={valence}
           onChange={(e) => setValence(e.target.valueAsNumber)}
-          style={{ '--fill-factor': `${((valence + 10) / 20) * 100}%` } as React.CSSProperties}
+          style={{ '--fillFactor': `${((valence + 10) / 20) * 100}` } as React.CSSProperties}
         />
         {valence}
       </div>
@@ -32,7 +33,7 @@ const ValenceArousalSliders: React.FC<ValenceArousalSlidersProps> = ({ valence, 
           step="1"
           value={arousal}
           onChange={(e) => setArousal(e.target.valueAsNumber)}
-          style={{ '--fill-factor': `${((arousal + 10) / 20) * 100}%` } as React.CSSProperties}
+          style={{ '--fillFactor': `${((arousal + 10) / 20) * 100}` } as React.CSSProperties}
         />
         {arousal}
       </div>

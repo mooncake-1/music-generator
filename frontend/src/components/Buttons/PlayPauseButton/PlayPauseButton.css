@@ -1,0 +1,23 @@
+/* Play/Pause Button container */
+.play-pause-container {
+  position: absolute;
+  left: 50%;
+  bottom: 5%;
+  transform: translateX(-50%);
+  margin: 20px;
+}
+
+/* Play/Pause Button */
+.play-pause-button {
+  background-color: #7b00ff;
+  border: none;
+  padding: 20px 100px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.play-pause-button:hover {
+  background-color: #ff00a2;
+}

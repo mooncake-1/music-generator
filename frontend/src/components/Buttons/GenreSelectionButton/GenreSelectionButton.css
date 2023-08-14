@@ -1,0 +1,43 @@
+/* Genre Selection container */
+.genre-selection-container {
+  position: absolute;
+  left: 0;
+  bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 20px;
+  color:transparent;
+}
+
+/* buttons container */
+.genre-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* individual genre buttons */
+.genre-button {
+  background-color: #7b00ff;
+  border: none;
+  padding: 20px 20px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13.5px;
+}
+
+.genre-button:hover {
+  background-color: #ff00a2;
+}
+
+.genre-button.selected {
+  background-color: #ff00a2;
+}

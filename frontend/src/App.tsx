@@ -36,7 +36,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="container">
+    <div className="App-header">
       <ValenceArousalSliders valence={valence} arousal={arousal} setValence={setValence} setArousal={setArousal} />
       <ModelComplexitySlider complexity={complexity} setComplexity={setComplexity} />
       <GenreSelection selectedGenre={selectedGenre} setSelectedGenre={setSelectedGenre} />
