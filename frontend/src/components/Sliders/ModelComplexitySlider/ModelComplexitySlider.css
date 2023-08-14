@@ -15,21 +15,21 @@
   width: 200px;
   outline: none;
   cursor: pointer;
-  -webkit-appearance: none; /* Important for Chrome */
+  -webkit-appearance: none;
 }
 
 /* Custom Track */
 .model-complexity-container input[type="range"]::-webkit-slider-runnable-track {
-  background:ghostwhite;
-  height: 12px;
+  background: #d3d3d3;
+  height: 5px;
   border-radius: 3px;
 }
 
 /* Custom Thumb */
 .model-complexity-container input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  background: transparent; /* Make thumb transparent */
-  border: none; /* Remove border */
+  background: transparent;
+  border: none;
   width: 0px;
   height: 5px;
 }

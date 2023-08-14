@@ -4,6 +4,8 @@ import ValenceArousalSliders from './components/Sliders/ValenceArousalSlider/Val
 import GenreSelection from './components/Buttons/GenreSelectionButton/GenreSelectionButton';
 import PlayPauseButton from './components/Buttons/PlayPauseButton/PlayPauseButton';
 import axios from 'axios';
+import './App.css';
+
 const generateMusic = async (valence: number, arousal: number, complexity: number, genre: string) => {
   try {
     console.log('Sending request with parameters:', { valence, arousal, complexity, genre });
@@ -36,11 +38,13 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="App-header">
-      <ValenceArousalSliders valence={valence} arousal={arousal} setValence={setValence} setArousal={setArousal} />
-      <ModelComplexitySlider complexity={complexity} setComplexity={setComplexity} />
-      <GenreSelection selectedGenre={selectedGenre} setSelectedGenre={setSelectedGenre} />
-      <PlayPauseButton handlePlay={handlePlay} />
+    <div className="App">
+      <div className="App-header">
+        <ValenceArousalSliders valence={valence} arousal={arousal} setValence={setValence} setArousal={setArousal} />
+        <ModelComplexitySlider complexity={complexity} setComplexity={setComplexity} />
+        <GenreSelection selectedGenre={selectedGenre} setSelectedGenre={setSelectedGenre} />
+        <PlayPauseButton handlePlay={handlePlay} />
+      </div>
     </div>
   );
 };

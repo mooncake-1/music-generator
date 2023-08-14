@@ -34,10 +34,10 @@
 /* Custom Thumb */
 .slider-container input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  background: transparent; /* Keep the thumb transparent */
-  border: none; /* Remove border */
-  height: 10px; /* Set height matching the track */
-  z-index: 1; /* Set z-index lower than the filling */
+  background: transparent;
+  border: none;
+  height: 10px;
+  z-index: 1;
 }
 
 /* Filling based on the value */
@@ -49,7 +49,7 @@
   height: calc(var(--fillFactor, 0) * 1%);
   background: linear-gradient(to top, #7b00ff, #ff00a2);
   transform-origin: center bottom;
-  z-index: 2; /* Set z-index higher than the thumb */
+  z-index: 2;
 }
 
 /* Responsive styling */
