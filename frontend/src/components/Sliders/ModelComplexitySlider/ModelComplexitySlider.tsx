@@ -11,7 +11,7 @@ const ModelComplexitySlider: React.FC<ModelComplexitySliderProps> = ({ complexit
 
   return (
     <div className="model-complexity-container">
-      <label>Model Complexity:</label>
+      <label>Model Complexity</label>
         <div className="slider-wrapper">
           <input
             type="range"

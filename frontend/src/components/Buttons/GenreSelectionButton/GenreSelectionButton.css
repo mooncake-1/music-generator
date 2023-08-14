@@ -19,10 +19,10 @@
 
 /* individual genre buttons */
 .genre-button {
-  background-color: #7b00ff;
+  background-color: #00ADB5;
   border: none;
   padding: 20px 20px;
-  color: white;
+  color: #EEEEEE;
   cursor: pointer;
   transition: background-color 0.3s;
   border-radius: 50%;
@@ -35,9 +35,9 @@
 }
 
 .genre-button:hover {
-  background-color: #ff00a2;
+  background-color: #FF5722;
 }
 
 .genre-button.selected {
-  background-color: #ff00a2;
+  background-color: #FF5722;
 }
