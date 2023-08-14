@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
-import './ValenceArousalSliders.css';
+import React from 'react';
 
-const ValenceArousalSliders: React.FC = () => {
-  const [valence, setValence] = useState(0);
-  const [arousal, setArousal] = useState(0);
+interface ValenceArousalSlidersProps {
+  valence: number;
+  arousal: number;
+  setValence: (value: number) => void;
+  setArousal: (value: number) => void;
+}
 
+const ValenceArousalSliders: React.FC<ValenceArousalSlidersProps> = ({ valence, arousal, setValence, setArousal }) => {
   return (
     <div className="container">
       <div className="slider-container">

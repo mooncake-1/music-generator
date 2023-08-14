@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
-import './GenreSelectionButton.css';
+import React from 'react';
 
-const GenreSelection: React.FC = () => {
+interface GenreSelectionProps {
+  selectedGenre: number | null;
+  setSelectedGenre: (value: number | null) => void;
+}
+
+const GenreSelection: React.FC<GenreSelectionProps> = ({ selectedGenre, setSelectedGenre }) => {
   const genres = ['Rock', 'Pop', 'Jazz', 'Classical', 'Hip-Hop'];
-  const [selectedGenre, setSelectedGenre] = useState<number | null>(null);
 
   return (
     <div className="genre-selection-container">

@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
-import './ModelComplexitySlider.css';
+import React from 'react';
 
-const ModelComplexitySlider: React.FC = () => {
-  const [complexity, setComplexity] = useState(0);
+interface ModelComplexitySliderProps {
+  complexity: number;
+  setComplexity: (value: number) => void;
+}
 
+const ModelComplexitySlider: React.FC<ModelComplexitySliderProps> = ({ complexity, setComplexity }) => {
   const complexityLabels = ['Low', 'Medium', 'High'];
 
   return (
@@ -17,7 +19,7 @@ const ModelComplexitySlider: React.FC = () => {
         value={complexity}
         onChange={(e) => setComplexity(e.target.valueAsNumber)}
       />
-      <div>{complexityLabels[complexity]}</div> {/* This is the label that changes */}
+      <div>{complexityLabels[complexity]}</div>
     </div>
   );
 };
