@@ -1,52 +1,51 @@
-/* Model Complexity Slider container */
 .model-complexity-container {
   position: absolute;
-  right: 0;
-  bottom: 5%;
+  right: 5%;
+  bottom: 10%;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   margin: 20px;
 }
 
-/*  Model Complexity Slider */
-.model-complexity-container input[type="range"] {
+.complexity-slider {
   position: relative;
   width: 200px;
-  outline: none;
-  cursor: pointer;
-  -webkit-appearance: none;
-}
-
-/* Custom Track */
-.model-complexity-container input[type="range"]::-webkit-slider-runnable-track {
+  height: 20px;
   background: #EEEEEE;
-  height: 5px;
   border-radius: 3px;
 }
 
-/* Custom Thumb */
-.model-complexity-container input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  background: transparent;
+.complexity-thumb {
+  width: 15px;
+  height: 15px;
+  background: black;
   border: none;
-  width: 0px;
-  height: 5px;
+  cursor: pointer;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-/* Filling based on the value */
-.model-complexity-container input[type="range"]::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: calc(var(--fillFactor, 0) * 1%);
+.complexity-track {
   background: linear-gradient(to right, #00ADB5, #FF5722);
-  transform-origin: left center;
+  border-radius: 3px;
 }
 
 .model-complexity-container label {
   color: #EEEEEE;
   font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.marker-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.marker-container span {
+  color: #EEEEEE;
+  font-size: 14px;
 }

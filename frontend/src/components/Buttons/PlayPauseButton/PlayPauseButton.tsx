@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button } from '@mui/material';
 import './PlayPauseButton.css';
 
 interface PlayPauseButtonProps {
@@ -15,12 +16,20 @@ const PlayPauseButton: React.FC<PlayPauseButtonProps> = ({ handlePlay }) => {
 
   return (
     <div className="play-pause-container">
-      <button
-        className="play-pause-button"
-        onClick={handleClick}
+      <Button 
+          variant="contained" 
+          className="play-pause-button"
+          sx={{
+              backgroundColor: '#00ADB5',
+              '&:hover': {
+                  backgroundColor: '#FF5722',
+              },
+              color: '#EEEEEE',
+          }}
+          onClick={handleClick}
       >
-        {isPlaying ? '\u23F8' : '\u23F5'}
-      </button>
+          {isPlaying ? '\u23F8' : '\u23F5'}
+      </Button>
     </div>
   );
 };
