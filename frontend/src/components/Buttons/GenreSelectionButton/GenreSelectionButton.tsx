@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '@mui/material/Button';
 import './GenreSelectionButton.css';
 
 interface GenreSelectionProps {
@@ -14,13 +15,15 @@ const GenreSelection: React.FC<GenreSelectionProps> = ({ selectedGenre, setSelec
       <label>Genre</label>
       <div className="genre-buttons">
         {genres.map((genre, index) => (
-          <button
-            key={index}
-            className={`genre-button ${selectedGenre === index ? 'selected' : ''}`}
-            onClick={() => setSelectedGenre(index)}
+          <Button
+          variant={selectedGenre === index ? "contained" : "outlined"}
+          color={selectedGenre === index ? "primary" : undefined}
+          key={index}
+          className="genre-button"
+          onClick={() => setSelectedGenre(index)}
           >
-            {genre}
-          </button>
+              {genre}
+          </Button>
         ))}
       </div>
     </div>

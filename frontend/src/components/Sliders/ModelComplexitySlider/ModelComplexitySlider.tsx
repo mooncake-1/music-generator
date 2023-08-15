@@ -1,4 +1,5 @@
 import React from 'react';
+import Slider from 'react-slider';
 import './ModelComplexitySlider.css';
 
 interface ModelComplexitySliderProps {
@@ -7,25 +8,27 @@ interface ModelComplexitySliderProps {
 }
 
 const ModelComplexitySlider: React.FC<ModelComplexitySliderProps> = ({ complexity, setComplexity }) => {
-  const complexityLabels = ['Low', 'Medium', 'High'];
-
   return (
     <div className="model-complexity-container">
       <label>Model Complexity</label>
-        <div className="slider-wrapper">
-          <input
-            type="range"
-            min="0"
-            max="2"
-            step="1"
-            value={complexity}
-            onChange={(e) => setComplexity(e.target.valueAsNumber)}
-            style={{ '--fillFactor': `${(complexity) * 50}` } as React.CSSProperties}
-          />
-        </div>
-      <div>{complexityLabels[complexity]}</div>
+      <Slider
+        className="complexity-slider"
+        thumbClassName="complexity-thumb"
+        trackClassName="complexity-track"
+        min={0}
+        max={2}
+        step={1}
+        value={complexity}
+        onChange={setComplexity}
+      />
+      <div className="marker-container">
+        <span>Low</span>
+        <span>Medium</span>
+        <span>High</span>
+      </div>
     </div>
   );
 };
+
 
 export default ModelComplexitySlider;

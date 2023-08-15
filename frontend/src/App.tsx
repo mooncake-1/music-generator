@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import ModelComplexitySlider from './components/Sliders/ModelComplexitySlider/ModelComplexitySlider';
-import ValenceArousalSliders from './components/Sliders/ValenceArousalSlider/ValenceArousalSliders';
 import GenreSelection from './components/Buttons/GenreSelectionButton/GenreSelectionButton';
+import ValenceSlider from './components/Sliders/ValenceSlider/ValenceSlider';
+import ArousalSlider from './components/Sliders/ArousalSlider/ArousalSlider';
 import PlayPauseButton from './components/Buttons/PlayPauseButton/PlayPauseButton';
 import axios from 'axios';
 import './App.css';
@@ -40,7 +41,8 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <div className="App-header">
-        <ValenceArousalSliders valence={valence} arousal={arousal} setValence={setValence} setArousal={setArousal} />
+        <ValenceSlider valence={valence} setValence={setValence} />
+        <ArousalSlider arousal={arousal} setArousal={setArousal} />
         <ModelComplexitySlider complexity={complexity} setComplexity={setComplexity} />
         <GenreSelection selectedGenre={selectedGenre} setSelectedGenre={setSelectedGenre} />
         <PlayPauseButton handlePlay={handlePlay} />
