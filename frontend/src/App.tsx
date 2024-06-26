@@ -12,24 +12,40 @@ const generateMusic = async (valence: number, arousal: number) => {
       valence,
       arousal
     });
-    // TODO: Play music
     console.log(response.data.message);
+    return response.data.pid
   } catch (error) {
-    // TODO: Show error message
     console.error('Error generating music:', error);
+    throw error;
   }
 };
+
+const stopGeneration = async () => {
+  try {
+    const response = await axios.post('http://localhost:8000/api/stop/');
+    console.log(response.data.message);
+  } catch (error) {
+    console.error('Error stopping generation:', error);
+  }
+}
 
 const App: React.FC = () => {
   const [valence, setValence] = useState(0);
   const [arousal, setArousal] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const handlePlay = () => {
+  const handlePlay = async () => {
     if (!isPlaying) {
-      generateMusic(valence, arousal);
+      try {
+        await generateMusic(valence, arousal);
+        setIsPlaying(true);
+      } catch (error) {
+        console.error('Error starting music generation:', error);
+      }
+    } else {
+      await stopGeneration();
+      setIsPlaying(false);
     }
-    setIsPlaying(!isPlaying);
   };
 
   return (

@@ -8,4 +8,5 @@ def test_view(request):
 
 urlpatterns = [
     path('generate/', views.generate_music, name='generate_music'),
+    path('stop/', views.stop_generation, name='stop_generation'),
 ]
