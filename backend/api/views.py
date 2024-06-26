@@ -10,6 +10,8 @@ logger = logging.getLogger(__name__)
 
 root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
 
+models = ["conditional1", "conditional5", "conditional10", "conditional46", "continuous_concat"]
+
 music_process = None
 
 @api_view(['POST'])
@@ -17,12 +19,15 @@ def generate_music(request):
     global music_process
     serializer = MusicParametersSerializer(data=request.data)
     if serializer.is_valid():
-        valence = serializer.validated_data['valence']
-        arousal = serializer.validated_data['arousal']
-        logger.info(f"Received parameters - valence: {valence}, arousal: {arousal}")
-
+        print(serializer)
+        valence = serializer.validated_data["valence"]
+        arousal = serializer.validated_data["arousal"]
+        complexity = serializer.validated_data["complexity"]
+        model = models[complexity]
+        print(model)
+        logger.info(f"Received parameters - valence: {valence}, arousal: {arousal}, complexity: {complexity}")
         radio_script = os.path.abspath(os.path.join(root_dir, 'midi-emotion', 'src', 'radio.py'))
-        command = ['python', radio_script, '--model_dir', 'conditional1', '--valence', str(valence), '--arousal', str(arousal)]
+        command = ['python', radio_script, '--model_dir', str(model), '--valence', str(valence), '--arousal', str(arousal)]
 
         try:
             music_process = subprocess.Popen(command)
