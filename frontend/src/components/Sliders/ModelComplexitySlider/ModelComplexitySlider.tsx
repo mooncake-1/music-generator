@@ -1,6 +1,6 @@
-import React from 'react';
-import Slider from 'react-slider';
-import './ModelComplexitySlider.css';
+import React from "react";
+import Slider from "react-slider";
+import "./ModelComplexitySlider.css";
 
 interface ModelComplexitySliderProps {
   complexity: number;
@@ -9,7 +9,7 @@ interface ModelComplexitySliderProps {
 
 
 const complexityValues = [1, 5, 10, 46, 145];
-const complexityLabels = ['1M', '5M', '10M', '46M', '145M'];
+const complexityLabels = ["1M", "5M", "10M", "46M", "145M"];
 
 const ModelComplexitySlider: React.FC<ModelComplexitySliderProps> = ({ complexity, setComplexity }) => {
   return (

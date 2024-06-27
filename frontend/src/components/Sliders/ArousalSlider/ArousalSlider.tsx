@@ -1,6 +1,6 @@
-import React from 'react';
-import Slider from 'react-slider';
-import './ArousalSlider.css';
+import React from "react";
+import Slider from "react-slider";
+import "./ArousalSlider.css";
 
 interface ArousalSliderProps {
   arousal: number;

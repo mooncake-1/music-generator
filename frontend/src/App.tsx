@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import ValenceSlider from './components/Sliders/ValenceSlider/ValenceSlider';
-import ArousalSlider from './components/Sliders/ArousalSlider/ArousalSlider';
-import ModelComplexitySlider from './components/Sliders/ModelComplexitySlider/ModelComplexitySlider';
-import PlayPauseButton from './components/Buttons/PlayPauseButton/PlayPauseButton';
-import axios from 'axios';
-import './App.css';
+import React, { useState } from "react";
+import ValenceSlider from "./components/Sliders/ValenceSlider/ValenceSlider";
+import ArousalSlider from "./components/Sliders/ArousalSlider/ArousalSlider";
+import ModelComplexitySlider from "./components/Sliders/ModelComplexitySlider/ModelComplexitySlider";
+import PlayPauseButton from "./components/Buttons/PlayPauseButton/PlayPauseButton";
+import axios from "axios";
+import "./App.css";
 
 const generateMusic = async (valence: number, arousal: number, complexity: number) => {
   try {
-    console.log('Sending request with parameters:', { valence, arousal, complexity });
-    const response = await axios.post('http://localhost:8000/api/generate/', {
+    console.log("Sending request with parameters:", { valence, arousal, complexity });
+    const response = await axios.post("http://localhost:8000/api/generate/", {
       valence,
       arousal,
       complexity
@@ -17,17 +17,17 @@ const generateMusic = async (valence: number, arousal: number, complexity: numbe
     console.log(response.data.message);
     return response.data.pid
   } catch (error) {
-    console.error('Error generating music:', error);
+    console.error("Error generating music:", error);
     throw error;
   }
 };
 
 const stopGeneration = async () => {
   try {
-    const response = await axios.post('http://localhost:8000/api/stop/');
+    const response = await axios.post("http://localhost:8000/api/stop/");
     console.log(response.data.message);
   } catch (error) {
-    console.error('Error stopping generation:', error);
+    console.error("Error stopping generation:", error);
   }
 }
 
@@ -43,7 +43,7 @@ const App: React.FC = () => {
         await generateMusic(valence, arousal, complexity);
         setIsPlaying(true);
       } catch (error) {
-        console.error('Error starting music generation:', error);
+        console.error("Error starting music generation:", error);
       }
     } else {
       await stopGeneration();

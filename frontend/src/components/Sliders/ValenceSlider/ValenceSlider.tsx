@@ -1,6 +1,6 @@
-import React from 'react';
-import Slider from 'react-slider';
-import './ValenceSlider.css';
+import React from "react";
+import Slider from "react-slider";
+import "./ValenceSlider.css";
 
 interface ValenceSliderProps {
   valence: number;
