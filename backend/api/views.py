@@ -26,8 +26,6 @@ def generate_music(request):
         logger.info(f"Received parameters - valence: {valence}, arousal: {arousal}, complexity: {complexity}")
         radio_script = os.path.abspath(os.path.join(root_dir, "midi-emotion", "src", "radio.py"))
         command = ["python", radio_script, "--model_dir", str(model), "--valence", str(valence), "--arousal", str(arousal)]
-        print(command)
-
         try:
             music_process = subprocess.Popen(command)
             return JsonResponse({"message": "Starting music generation."})
